@@ -1,7 +1,7 @@
 # ⛧ THE SIGILARIUM 2.0 ⛧
 ## *Digital Alchemy & Aesthetic Cyber-Sorcery*
 
-The **Sigilarium** is a web-based ritual tool designed for the modern chaos magician, digital alchemist, and aesthetic explorer. It provides a geometric interface for the transmutation of intent into visual sigils, utilizing varied grid systems, temporal ebbs (animations), and kaleidoscopic symmetry.
+## Use it on the web: https://sigilarium.pages.dev/
 
 ---
 
