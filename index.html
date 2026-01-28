@@ -30,12 +30,14 @@
             font-family: var(--font-family);
             overflow: hidden;
             height: 100vh;
+            height: 100dvh;
             width: 100vw;
         }
 
         .app-container {
             display: flex;
             height: 100vh;
+            height: 100dvh;
             width: 100vw;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
@@ -355,7 +357,8 @@
             }
 
             .canvas-container {
-                height: calc(100vh - 348px);
+                flex: 1;
+                min-height: 0;
             }
 
             .header-title {
@@ -1248,7 +1251,32 @@
             DOM.ctx.stroke();
         });
 
+        // Touch Support for Mobile Drawing
+        DOM.canvas.addEventListener('touchstart', e => {
+            if (getCurrentInputMode() !== 'draw') return;
+            e.preventDefault();
+            const touch = e.touches[0];
+            isDrawing = true; currentPathPoints = []; liveAnimationId && cancelAnimationFrame(liveAnimationId);
+            currentPathPoints.push(getMousePos(DOM.canvas, touch));
+        }, { passive: false });
+
+        DOM.canvas.addEventListener('touchmove', e => {
+            if (!isDrawing) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+            DOM.ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+            currentPathPoints.push(getMousePos(DOM.canvas, touch));
+            DOM.ctx.beginPath(); DOM.ctx.lineWidth = 1; DOM.ctx.strokeStyle = '#333';
+            for (let i = 0; i < currentPathPoints.length; i++) DOM.ctx.lineTo(currentPathPoints[i].x, currentPathPoints[i].y);
+            DOM.ctx.stroke();
+        }, { passive: false });
+
         window.addEventListener('mouseup', () => {
+            if (getCurrentInputMode() !== 'draw' || !isDrawing) return;
+            isDrawing = false; handleInteraction(false);
+        });
+
+        window.addEventListener('touchend', () => {
             if (getCurrentInputMode() !== 'draw' || !isDrawing) return;
             isDrawing = false; handleInteraction(false);
         });
