@@ -2,6 +2,8 @@
 
 **Sigilarium** is a web-based application designed for generating, manipulating, and animating geometric sigils. It translates various forms of user input into visual patterns using configurable grid systems and rendering options.
 
+## Try it on the web: https://sigilarium.pages.dev/
+
 ### Practical Application in Chaos Magick
 This tool streamlines the sigilization process—a core technique in Chaos Magick for focusing will and manifesting intent. It provides a digital framework for:
 *   **Abstraction**: Automatically converting conscious statements of intent into non-linear, abstract glyphs to bypass the "psychic censor."
