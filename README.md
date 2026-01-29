@@ -1,70 +1,71 @@
-# ⛧ THE SIGILARIUM 2.0 ⛧
-## *Digital Alchemy & Aesthetic Cyber-Sorcery*
+# Sigilarium 2.0
 
-The **Sigilarium** is a web-based ritual tool designed for the modern chaos magician, digital alchemist, and aesthetic explorer. It provides a geometric interface for the transmutation of intent into visual sigils, utilizing varied grid systems, temporal ebbs (animations), and kaleidoscopic symmetry.
+**Sigilarium** is a web-based application designed for generating, manipulating, and animating geometric sigils. It translates various forms of user input into visual patterns using configurable grid systems and rendering options.
 
----
+### Practical Application in Chaos Magick
+This tool streamlines the sigilization process—a core technique in Chaos Magick for focusing will and manifesting intent. It provides a digital framework for:
+*   **Abstraction**: Automatically converting conscious statements of intent into non-linear, abstract glyphs to bypass the "psychic censor."
+*   **Gnosis & Charging**: Utilizing hypnotic animations (stroboscopic lines, rotation, color cycling) to assist practitioners in achieving a state of gnosis (altered consciousness) essential for charging the sigil.
+*   **Ritual Geometry**: Leveraging numerological and geometric grids (such as the Saturn square or radial wheels) to structure the intent within specific metaphysical correspondences.
 
-## 🌀 SYSTEM ARCHITECTURE (HOW TO OPERATE)
+## Features
 
-### 1. THE SOURCE OF POWER (INPUT MODES)
-The ritual begins with the crystallization of intent. Choose your medium:
-*   **TEXT**: The classic method. Type your statement of intent. The system extracts the geometric essence from the characters.
-*   **NUM**: Direct gematria. Input sequences of numbers to define the sigil's primary nodes.
-*   **DRAW**: Direct neural-link. Use your cursor or finger to trace original patterns onto the digital canvas.
-*   **IMG**: Visual divination. Upload an image; the system will sample its luminosity patterns to generate a corresponding number sequence.
+### Input Modes
+*   **Text Processing**: Converts text input into geometric paths by mapping characters to grid coordinates (removing vowels and duplicates).
+*   **Numeric Input**: Maps sequences of numbers directly to grid points.
+*   **Freehand Drawing**: Allows users to draw custom paths directly on the HTML5 Canvas.
+*   **Image Analysis**: Uploads an image and samples its brightness/luminosity values to generate a corresponding coordinate sequence.
 
-### 2. THE GEOMETRIC MATRIX
-Modify the structural reality of your sigil:
-*   **SEGMENTS**: Control the kaleidoscopic repetition (1-16 segments).
-*   **GRID SYSTEMS**: 
-    *   *Saturn*: A rigid 3x3 planetary square for stability.
-    *   *Witch Wheel*: A circular expansion for fluid energy.
-    *   *Chaos Scatter*: Entropic distribution for unpredictability.
-*   **SYMMETRY**: Enable X and Y axis mirroring to create complex, balanced talismans.
+### Geometric & Rendering Control
+*   **Grid Systems**:
+    *   **Saturn (3x3)**: Standard numeric 3x3 grid mapping.
+    *   **Witch Wheel**: Circular radial arrangement.
+    *   **Chaos Scatter**: Randomized distribution of points.
+*   **Segments**: Adjustable kaleidoscope effect (1-16 segments) for radial symmetry.
+*   **Symmetry**: Toggleable X and Y axis mirroring.
+*   **Styling**: Real-time control over stroke color, background color, glow effects, and cubic bezier curve smoothing.
 
-### 3. TEMPORAL EBB (ANIMATIONS)
-Infuse your sigil with "Life Force" through rhythmic cycles:
-*   **Segment Draw**: Watch the sigil etch itself into reality frame-by-frame.
-*   **Line Flow**: A pulse of light that travels through the geometric path.
-*   **Rotational Force**: Clockwise or Counter-clockwise spinning to focus or release energy.
-*   **Pulse / Breathe**: A rhythmic expansion and contraction of the sigil's glow.
-*   **Chroma Spectrum**: Continuous shifting through the visible color frequencies.
+### Animation System
+The application supports real-time canvas animations:
+*   **Segment Draw / Live Trace**: Progressively draws the path segments.
+*   **Line Flow**: Dashed line offset animation.
+*   **Rotation**: Continuous CW or CCW rotation.
+*   **Pulse**: Scale modulation (breathing effect).
+*   **Chroma**: HSL color cycling.
 
----
+### Sigil Scribe Tool
+A utility for processing statements of intent:
+1.  **Unique Character Extraction**: Filters distinct letters.
+2.  **Consonant Reduction**: Removes vowels.
+3.  **Gematric Conversion**: Maps letters to numeric values.
+4.  **Sigil Nucleus**: Reduces the sum of values to a single digit (recursive sum).
 
-## 🧪 THE SIGIL SCRIBE (SUBSYSTEM)
-A built-in ritual assistant that automates the classical reduction methods of Austin Osman Spare:
-1.  **Unique Character Extraction**: Filters out repetitive noise.
-2.  **Consonant Reduction**: Strips the "vocal soul" (vowels) to reach the skeletal intent.
-3.  **Gematric Conversion**: Transmutes symbols into mathematical vibrations.
-4.  **Sigil Nucleus**: Reduces the entire complexity into a single, potent seed-digit.
+### Export Options
+*   **PNG**: Exports the current canvas state as a static image (supports transparency).
+*   **GIF**: Client-side GIF generation using `gif.js` to capture active animations.
 
----
+## Tech Stack
+*   **Frontend**: HTML5, CSS3, Vanilla JavaScript.
+*   **Rendering**: HTML5 Canvas API (2D Context).
+*   **Libraries**: `gif.js` (for GIF export).
 
-## 💾 MANIFESTATION (EXPORT)
-Once the sigil is charged, bring it into physical reality:
-*   **PNG**: Capture a static talisman (supports transparency).
-*   **GIF**: Encode the temporal ebb (animation) into a shareable digital loop.
+## Local Development & Setup
 
----
+This is a static web application. It does not require a build step or a Node.js backend to run basic features.
 
-## 🛠️ THE RITUAL CHAMBER (SETUP)
-To host this sanctuary locally:
+### Prerequisite
+*   A modern web browser (Chrome, Firefox, Edge).
 
-1.  Clone the vessel:
+### Running the Application
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/Clebmb/Sigilarium-Web.git
     ```
-2.  Open `index.html` in any modern Chromium-based browsing engine.
-3.  *Note: To use the GIF export feature locally, you may need to serve the directory through a local server (e.g., Live Server or Python's http.server) to satisfy script security protocols.*
-
----
-
-## ⚖️ THE COVENANT (LICENSE)
-This software is provided for experimentation, manifestation, and aesthetic joy. Use it to expand your reality. 
-
-*Created by **Clebmb**.*
+2.  **Serve the files**:
+    *   **Basic**: You can simply open `index.html` in your browser.
+    *   **Advanced (Required for GIF Export)**: Due to browser security policies (CORS/Web Workers), the GIF export feature may encounter issues if run directly from the file system (`file://`). It is recommended to use a local development server.
+        *   **Python**: `python -m http.server 8000`
+        *   **Node/NPM**: `npx serve .` or use the Live Server extension in VS Code.
 
 ---
 
